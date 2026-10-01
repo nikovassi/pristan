@@ -1,12 +1,9 @@
 import { CalendarCheck, Mail, Phone, ShieldCheck } from 'lucide-react'
-import { useState } from 'react'
-import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { BookingEmbed } from '../components/BookingEmbed'
 import { ExternalBookingButton } from '../components/BookingCTA'
 import { Reveal } from '../components/Reveal'
 import { ServiceCard } from '../components/ServiceCard'
-import { BOOKING_PROVIDER, isBookingConfigured, site, type Service } from '../config/site'
+import { BOOKING_PROVIDER, isBookingConfigured, site } from '../config/site'
 import { paths } from '../lib/paths'
 import { useSeo } from '../lib/seo'
 
@@ -20,7 +17,6 @@ export default function Booking() {
   useSeo(bookingSeo)
   const configured = isBookingConfigured()
   const c = site.contact
-  const [selected, setSelected] = useState<Service | null>(null)
 
   return (
     <div className="container-page pb-24 pt-12 md:pt-20">
@@ -53,26 +49,17 @@ export default function Booking() {
             <ServiceCard
               service={s}
               action={
-                configured ? (
-                  <button
-                    type="button"
-                    onClick={() => setSelected(s)}
-                    aria-pressed={selected?.id === s.id}
-                    className={`btn w-full ${s.featured || selected?.id === s.id ? 'btn-primary' : 'btn-ghost'}`}
-                  >
-                    {selected?.id === s.id ? 'Избрано' : 'Избери час'}
-                    <ArrowRight className="btn-arrow h-4 w-4" strokeWidth={1.8} aria-hidden="true" />
-                  </button>
-                ) : (
-                  <ExternalBookingButton service={s} label="Избери час" variant={s.featured ? 'primary' : 'ghost'} className="w-full" />
-                )
+                <ExternalBookingButton
+                  service={s}
+                  label="Избери час"
+                  variant={s.featured ? 'primary' : 'ghost'}
+                  className="w-full"
+                />
               }
             />
           </Reveal>
         ))}
       </div>
-
-      {configured && selected && <BookingEmbed service={selected} onClose={() => setSelected(null)} />}
 
       {!configured && (
         <div id="zapisvane-po-telefon" className="mt-10 scroll-mt-28 rounded-[1.25rem] border border-accent/30 bg-accent-soft p-6 md:p-8" role="note">

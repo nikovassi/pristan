@@ -9,16 +9,14 @@
  * този файл е публичен.
  */
 
-/** Публичният линк към профила в Cal.com (напр. https://cal.com/pristan).
- *  НЕ е линкът към админ панела (app.cal.com/event-types). */
+/** Линк към онлайн записването (напр. https://pristan.simplybook.it). */
 export const BOOKING_URL = 'REPLACE_WITH_BOOKING_URL'
 
 /** Доставчик на онлайн записването — показва се в текстовете за поверителност. */
 export const BOOKING_PROVIDER = {
-  name: 'Cal.com',
-  /** app.cal.com = САЩ (EU-US Data Privacy Framework + SCC); cal.eu = ЕС. */
-  dataLocation: 'САЩ, при гаранции по EU-US Data Privacy Framework и стандартни договорни клаузи',
-  privacyUrl: 'https://cal.com/privacy',
+  name: 'SimplyBook.me',
+  dataLocation: 'Европейския съюз',
+  privacyUrl: 'https://simplybook.me/en/policy',
 }
 
 /** Публичният адрес на сайта — използва се за canonical, sitemap и Open Graph.
@@ -86,8 +84,7 @@ export const site = {
   /**
    * Цени и видове консултации.
    * price: число или текст. currency се показва след цената.
-   * bookingUrl: директен линк към съответния тип среща в Cal.com (напр. https://cal.com/pristan/parva).
-   *   Ако е празен, се използва BOOKING_URL.
+   * bookingUrl: по избор — директен линк към конкретната услуга в booking системата.
    */
   currency: '€',
   services: [
@@ -105,7 +102,7 @@ export const site = {
     {
       id: 'individualna',
       name: 'Индивидуална консултация',
-      duration: 60,
+      duration: 50,
       price: 'XX',
       format: 'В кабинета',
       description: 'Последваща среща в рамките на започнат процес на работа.',
@@ -115,7 +112,7 @@ export const site = {
     {
       id: 'online',
       name: 'Онлайн консултация',
-      duration: 60,
+      duration: 50,
       price: 'XX',
       format: 'Видеовръзка',
       description: 'Същата работа, от място, на което се чувстваш удобно. Нужни са само стабилна връзка и тихо пространство.',
