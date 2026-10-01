@@ -99,7 +99,7 @@ export const site = {
       format: 'Онлайн или в кабинета',
       description:
         'Първа среща, в която се запознаваме, говорим за това, което те води, и преценяваме заедно дали и как да продължим.',
-      bookingUrl: 'https://cal.com/nikolay-vasilev-k7xcw8/30min',
+      bookingUrl: 'https://cal.com/nikolay-vasilev-k7xcw8/konsultaciya',
       featured: true,
     },
     {
@@ -109,7 +109,7 @@ export const site = {
       price: 'XX',
       format: 'В кабинета',
       description: 'Последваща среща в рамките на започнат процес на работа.',
-      bookingUrl: 'https://cal.com/nikolay-vasilev-k7xcw8/30min',
+      bookingUrl: 'https://cal.com/nikolay-vasilev-k7xcw8/konsultaciya',
       featured: false,
     },
     {
@@ -119,7 +119,7 @@ export const site = {
       price: 'XX',
       format: 'Видеовръзка',
       description: 'Същата работа, от място, на което се чувстваш удобно. Нужни са само стабилна връзка и тихо пространство.',
-      bookingUrl: 'https://cal.com/nikolay-vasilev-k7xcw8/30min',
+      bookingUrl: 'https://cal.com/nikolay-vasilev-k7xcw8/konsultaciya',
       featured: false,
     },
   ],

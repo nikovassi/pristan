@@ -15,7 +15,7 @@ export function ThemeToggle({ className = '' }: { className?: string }) {
     const root = document.documentElement
     root.classList.add('theme-transition')
     root.dataset.theme = next
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', next === 'dark' ? '#131210' : '#f6f3ee')
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', next === 'dark' ? '#1a1714' : '#fcf8f2')
     try {
       localStorage.setItem('theme', next)
     } catch {

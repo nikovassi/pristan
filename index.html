@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#f6f3ee" />
+    <meta name="theme-color" content="#fcf8f2" />
     <meta name="color-scheme" content="light dark" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -20,7 +20,7 @@
         try { t = localStorage.getItem('theme') } catch (e) {}
         if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
         d.dataset.theme = t
-        if (t === 'dark') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#131210')
+        if (t === 'dark') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#1a1714')
       })()
     </script>
     <!--app-head-->

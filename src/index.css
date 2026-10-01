@@ -15,52 +15,52 @@
    ------------------------------------------------------------ */
 :root {
   color-scheme: light;
-  --bg: #f6f3ee;          /* off-white, топъл ленен тон */
-  --bg-soft: #efeae2;     /* алтернативни секции */
-  --surface: #ffffff;
-  --surface-2: #fbf9f6;
-  --line: #e3ddd3;
-  --line-strong: #cfc6b8;
-  --ink: #1f1c19;         /* основен текст */
-  --ink-2: #4a443d;       /* вторичен текст (≈ 9:1) */
-  --ink-3: #6b645a;       /* помощен текст (≈ 5.4:1) */
-  --accent: #8c4a2f;      /* глина (≈ 6.5:1 върху bg) */
-  --accent-hover: #743b24;
-  --accent-soft: #f1e4da;
-  --accent-ink: #fffaf6;
-  --moss: #56604a;
-  --moss-soft: #e6e8de;
-  --focus: #8c4a2f;
-  --shadow: 0 1px 2px rgb(31 28 25 / 0.04), 0 8px 28px -12px rgb(31 28 25 / 0.12);
-  --art-1: #e9ddcf;
-  --art-2: #d9c4ae;
-  --art-3: #b9967a;
-  --art-4: #f7efe5;
+  --bg: #fcf8f2;          /* светъл, топъл крем */
+  --bg-soft: #f7f0e6;     /* алтернативни секции — топъл пясък */
+  --surface: #fffdf9;
+  --surface-2: #fdf9f3;
+  --line: #ede3d6;
+  --line-strong: #dccfbe;
+  --ink: #2a221c;         /* основен текст (≈ 14.8:1) */
+  --ink-2: #54493f;       /* вторичен текст (≈ 8.3:1) */
+  --ink-3: #75685b;       /* помощен текст (≈ 5.1:1) */
+  --accent: #9f5536;      /* топла теракота (≈ 5.2:1) */
+  --accent-hover: #874629;
+  --accent-soft: #f8e9de;
+  --accent-ink: #fffaf5;
+  --moss: #66744f;
+  --moss-soft: #ebeedf;
+  --focus: #9f5536;
+  --shadow: 0 1px 2px rgb(74 52 34 / 0.04), 0 10px 30px -14px rgb(120 80 45 / 0.18);
+  --art-1: #f3e6d6;
+  --art-2: #ebd3b9;
+  --art-3: #d3a47f;
+  --art-4: #fff6ea;
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --bg: #131210;
-  --bg-soft: #191715;
-  --surface: #1d1b18;
-  --surface-2: #22201c;
-  --line: #2e2b26;
-  --line-strong: #403b34;
-  --ink: #eee9e2;
-  --ink-2: #c9c1b6;
-  --ink-3: #a29a8e;
-  --accent: #dba487;      /* ≈ 8.5:1 върху bg */
-  --accent-hover: #e8b89e;
-  --accent-soft: #2c221c;
-  --accent-ink: #1a1512;
-  --moss: #a9b49a;
-  --moss-soft: #22251f;
-  --focus: #e8b89e;
-  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 12px 32px -16px rgb(0 0 0 / 0.6);
-  --art-1: #2a2420;
-  --art-2: #3a2f27;
-  --art-3: #6e5240;
-  --art-4: #1f1b18;
+  --bg: #1a1714;          /* топло почти черно */
+  --bg-soft: #201c18;
+  --surface: #25211c;
+  --surface-2: #2b2621;
+  --line: #37312a;
+  --line-strong: #4a4239;
+  --ink: #f3ece3;
+  --ink-2: #d5cabd;
+  --ink-3: #ad9f90;
+  --accent: #e8b08f;      /* ≈ 9.4:1 върху bg */
+  --accent-hover: #f0c2a6;
+  --accent-soft: #352821;
+  --accent-ink: #22180f;
+  --moss: #b7c2a3;
+  --moss-soft: #262a21;
+  --focus: #f0c2a6;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 12px 32px -16px rgb(0 0 0 / 0.55);
+  --art-1: #2e2722;
+  --art-2: #3f332a;
+  --art-3: #7a5a44;
+  --art-4: #241f1b;
 }
 
 @theme {
