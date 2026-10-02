@@ -32,7 +32,9 @@ export const homeSeo = {
       url: SITE_URL,
       telephone: site.contact.phone,
       email: site.contact.email,
-      image: absUrl('/og-image.png'),
+      image: absUrl('/og-image.jpg'),
+      logo: absUrl('/logo-512.png'),
+      priceRange: '30 €',
       address: {
         '@type': 'PostalAddress',
         streetAddress: site.contact.address,
@@ -42,7 +44,7 @@ export const homeSeo = {
       },
       areaServed: [{ '@type': 'City', name: site.contact.city }, { '@type': 'Country', name: 'България' }],
       availableLanguage: ['bg'],
-      knowsAbout: ['психологическо консултиране', 'онлайн психологическа консултация', 'тревожност', 'стрес', 'взаимоотношения'],
+      knowsAbout: ['психологическо консултиране', 'онлайн психологическа консултация', 'междуличностни конфликти', 'консултиране на тийнейджъри', 'кариерно ориентиране', 'мотивация', 'личностно развитие'],
       employee: { '@type': 'Person', name: site.psychologist.name, jobTitle: site.psychologist.title },
     },
     {
@@ -66,7 +68,7 @@ export default function Home() {
       <Section id={sections.about} tone="soft">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <Reveal className="mx-auto w-full max-w-sm lg:sticky lg:top-28 lg:self-start">
-            <PortraitArt photo={p.photo} alt={p.photoAlt} className="aspect-[4/5] w-full" />
+            <PortraitArt photo={p.photo} alt={p.photoAlt} width={800} height={800} position="50% 35%" className="aspect-[4/5] w-full" />
             <p className="mt-5 text-center font-serif text-2xl text-ink">{p.name}</p>
             <p className="text-center text-sm text-ink-3">{p.title}</p>
           </Reveal>
@@ -79,15 +81,18 @@ export default function Home() {
             </Reveal>
             <Reveal delay={80} className="mt-7 space-y-5 text-lg leading-relaxed text-ink-2">
               <p>
-                Казвам се {p.name}. Работя като психолог с възрастни хора, които минават през труден период, искат да разберат
-                себе си по-добре или просто имат нужда да бъдат изслушани без оценка.
+                Казвам се {p.name}. Пътят ми към консултирането започна от специалната педагогика — там научих колко
+                важно е да видиш човека отвъд проблема и да търсиш силните му страни. По-късно завърших магистратура по
+                консултативна психология.
               </p>
               <p>
-                В работата си вярвам, че всеки човек носи собствените си отговори — понякога просто са скрити под умора, тревога
-                или навик. Моята роля е да създам спокойно пространство, в което можем да ги потърсим заедно, с твоето темпо.
+                Пет години работих като мениджър „Човешки ресурси“. Всеки ден бях сред хора — в разговори за напрежение в
+                екипа, за трудни решения, за мотивация и професионална посока. Този опит ми показа, че повечето конфликти
+                се раждат там, където хората спират да се чуват, и че една добре проведена беседа може да промени много.
               </p>
-              <p className="text-base text-ink-3">
-                [Заменете този текст с няколко лични изречения: какво ви доведе до професията, какво цените в работата с хора.]
+              <p>
+                Днес работя с възрастни и младежи, които искат да подредят отношенията си, да разберат себе си по-добре
+                или да намерят посока. Разговаряме спокойно, без оценки и с твоето темпо — присъствено или онлайн.
               </p>
             </Reveal>
 

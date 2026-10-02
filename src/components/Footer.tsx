@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2.5">
-              <LogoMark className="h-8 w-8 text-ink" />
+              <LogoMark className="h-8 w-8" />
               <span className="font-serif text-2xl text-ink">{site.brand.name}</span>
             </div>
             <p className="mt-4 max-w-xs text-ink-3">{site.brand.tagline}. {site.brand.descriptor} в {site.contact.city} и онлайн.</p>

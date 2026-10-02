@@ -142,7 +142,7 @@ export function StickyMobileCTA() {
       aria-hidden={!visible}
     >
       <div className="flex items-center justify-between gap-3 rounded-full border border-line bg-surface/95 py-1.5 pl-5 pr-1.5 shadow-[var(--shadow)] backdrop-blur">
-        <span className="text-sm text-ink-2">Онлайн или в кабинета</span>
+        <span className="whitespace-nowrap text-sm text-ink-2">{site.services[0].price} {site.currency} · {site.services[0].duration} мин</span>
         <BookingCTA className="min-h-[2.75rem] px-5 text-sm" tabIndex={visible ? undefined : -1} />
       </div>
     </div>

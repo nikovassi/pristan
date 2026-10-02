@@ -8,7 +8,7 @@ export default function NotFound() {
   useSeo({ title: 'Страницата не е намерена', description: 'Тази страница не съществува.', path: '/404', noindex: true })
   return (
     <div className="container-page flex min-h-[60vh] flex-col items-center justify-center py-24 text-center">
-      <LogoMark className="h-12 w-12 text-ink-3" />
+      <LogoMark className="h-14 w-14" />
       <p className="eyebrow mt-8">Грешка 404</p>
       <h1 className="mt-4 text-[2.5rem] text-ink md:text-[3.25rem]">Тази страница не съществува</h1>
       <p className="mt-4 max-w-md text-lg text-ink-2">Може би адресът е променен. Нека те върна на спокойно място.</p>

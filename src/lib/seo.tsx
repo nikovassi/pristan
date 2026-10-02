@@ -63,7 +63,7 @@ export function renderHead(seo: Seo) {
   const url = absUrl(seo.path)
   const t = esc(fullTitle(seo.title))
   const d = esc(seo.description)
-  const img = absUrl('/og-image.png')
+  const img = absUrl('/og-image.jpg')
   const ld = (seo.jsonLd || [])
     .map((o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`)
     .join('\n    ')

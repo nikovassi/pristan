@@ -7,25 +7,36 @@ import { asset } from '../lib/paths'
  */
 export function PortraitArt({
   photo,
+  photoSmall,
   alt,
   className = '',
   priority = false,
   label = true,
+  width = 800,
+  height = 1000,
+  position = 'center',
 }: {
   photo: string | null
+  photoSmall?: string
   alt: string
   className?: string
   priority?: boolean
   label?: boolean
+  width?: number
+  height?: number
+  position?: string
 }) {
   if (photo) {
     return (
       <div className={`arch relative bg-bg-soft ${className}`}>
         <img
           src={asset(photo)}
+          srcSet={photoSmall ? `${asset(photoSmall)} ${Math.round(width / 2)}w, ${asset(photo)} ${width}w` : undefined}
+          sizes={photoSmall ? '(min-width: 1024px) 34vw, 90vw' : undefined}
           alt={alt}
-          width={800}
-          height={1040}
+          width={width}
+          height={height}
+          style={{ objectPosition: position }}
           loading={priority ? 'eager' : 'lazy'}
           fetchPriority={priority ? 'high' : 'auto'}
           decoding="async"

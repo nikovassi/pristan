@@ -1,7 +1,10 @@
 {
   "name": "Пристан — Психологическо консултиране",
   "short_name": "Пристан",
-  "icons": [{ "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }],
+  "icons": [
+    { "src": "logo-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
   "theme_color": "#fcf8f2",
   "background_color": "#fcf8f2",
   "display": "browser",

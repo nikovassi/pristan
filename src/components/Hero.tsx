@@ -26,8 +26,8 @@ export function Hero() {
           </div>
           <div className="rise" style={{ '--delay': '160ms' } as CSSProperties}>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-2 md:text-xl">
-              Психологическо консултиране за възрастни — при тревожност, стрес, трудни периоди и въпроси, с които не е нужно да
-              се справяш без подкрепа. В кабинета в {site.contact.city} или онлайн.
+              Психологическо консултиране за възрастни и младежи — при конфликти във взаимоотношенията, стрес, трудни
+              периоди, въпроси за кариерата и личностното развитие. Присъствено или онлайн.
             </p>
           </div>
           <div className="rise mt-10 flex flex-col gap-3 sm:flex-row sm:items-center" style={{ '--delay': '240ms' } as CSSProperties}>
@@ -40,7 +40,7 @@ export function Hero() {
           <div className="rise" style={{ '--delay': '320ms' } as CSSProperties}>
             <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-[0.95rem] text-ink-3">
               <li className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-moss" strokeWidth={1.6} aria-hidden="true" /> Кабинет в {site.contact.city}
+                <MapPin className="h-4 w-4 text-moss" strokeWidth={1.6} aria-hidden="true" /> Присъствени срещи
               </li>
               <li className="flex items-center gap-2">
                 <Video className="h-4 w-4 text-moss" strokeWidth={1.6} aria-hidden="true" /> Онлайн консултации
@@ -49,7 +49,7 @@ export function Hero() {
           </div>
         </div>
         <div className="rise mx-auto w-full max-w-[22rem] sm:max-w-[26rem] lg:max-w-none" style={{ '--delay': '200ms' } as CSSProperties}>
-          <PortraitArt photo={p.photo} alt={p.photoAlt} priority className="aspect-[4/5] w-full" />
+          <PortraitArt photo={site.heroImage.src} photoSmall={site.heroImage.srcSmall} alt={site.heroImage.alt} width={752} height={941} priority className="aspect-[4/5] w-full" />
         </div>
       </div>
     </section>
