@@ -13,7 +13,7 @@ export function MapEmbed() {
   if (loaded) {
     return (
       <iframe
-        title={`Карта: ${site.contact.address}, ${site.contact.city}`}
+        title={`Карта: ${[site.contact.address, site.contact.city].filter(Boolean).join(', ')}`}
         src={site.contact.mapsEmbedUrl}
         className="h-full min-h-[18rem] w-full rounded-[1.25rem] border border-line"
         loading="lazy"

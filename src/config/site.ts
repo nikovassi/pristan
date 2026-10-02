@@ -41,7 +41,7 @@ export const site = {
     /** Портрет в /public. null = неутрален placeholder. */
     photo: '/images/nikolay-vasilev.webp' as string | null,
     photoAlt: 'Николай Василев — консултативен психолог',
-    city: 'София',
+    city: 'Стара Загора',
     education: [
       'Магистър по консултативна психология — ПУ „Паисий Хилендарски“, Пловдив',
       'Бакалавър по специална педагогика — Тракийски университет, Стара Загора',
@@ -75,13 +75,16 @@ export const site = {
     /** Телефон във формат за tel: линкове, без интервали. */
     phoneHref: '+359888884001',
     email: 'pristan.consult@gmail.com',
-    address: '[ул. Примерна 1, ет. 2]',
-    city: 'София',
-    postalCode: '[1000]',
+    /** Точен адрес на мястото за присъствени срещи. Оставете празно, за да не се публикува —
+     *  тогава сайтът показва само града, а адресът се изпраща от Cal.com след записване. */
+    address: '',
+    city: 'Стара Загора',
+    postalCode: '',
+    addressNote: 'Точният адрес получаваш в имейла за потвърждение на часа.',
     /** Линк, който отваря адреса в Google Maps (нов прозорец). */
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Sofia',
+    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=%D0%A1%D1%82%D0%B0%D1%80%D0%B0+%D0%97%D0%B0%D0%B3%D0%BE%D1%80%D0%B0',
     /** Embed URL за картата. Зарежда се само след съгласие от посетителя. */
-    mapsEmbedUrl: 'https://www.google.com/maps?q=Sofia&output=embed',
+    mapsEmbedUrl: 'https://www.google.com/maps?q=%D0%A1%D1%82%D0%B0%D1%80%D0%B0+%D0%97%D0%B0%D0%B3%D0%BE%D1%80%D0%B0&output=embed',
     hours: [
       { days: 'Понеделник – Петък', time: '10:00 – 19:00' },
       { days: 'Събота', time: 'по договаряне' },
@@ -118,7 +121,7 @@ export const site = {
       duration: 60,
       price: 30,
       format: 'Присъствено',
-      description: 'Среща на живо в кабинета — в рамките на вече започнат процес на работа.',
+      description: 'Среща на живо в Стара Загора — в рамките на вече започнат процес на работа.',
       bookingUrl: 'https://cal.com/nikolay-vasilev-k7xcw8/konsultaciya',
       featured: false,
     },

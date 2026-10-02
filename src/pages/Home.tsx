@@ -20,7 +20,7 @@ import { paths, sections } from '../lib/paths'
 
 export const homeSeo = {
   title: site.brand.name,
-  description: `Психологическо консултиране в ${site.contact.city} и онлайн — при тревожност, стрес, трудни периоди и взаимоотношения. Спокойно и поверително пространство. Запази час онлайн.`,
+  description: `Психологическо консултиране в ${site.contact.city} и онлайн — при конфликти във взаимоотношенията, стрес, трудни периоди, кариерно ориентиране и личностно развитие. Спокойно и поверително пространство. Запази час онлайн.`,
   path: '/',
   jsonLd: [
     {
@@ -37,9 +37,8 @@ export const homeSeo = {
       priceRange: '30 €',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: site.contact.address,
+        ...(site.contact.address ? { streetAddress: site.contact.address, postalCode: site.contact.postalCode } : {}),
         addressLocality: site.contact.city,
-        postalCode: site.contact.postalCode,
         addressCountry: 'BG',
       },
       areaServed: [{ '@type': 'City', name: site.contact.city }, { '@type': 'Country', name: 'България' }],
@@ -146,7 +145,7 @@ export default function Home() {
         tone="soft"
         eyebrow="Консултации и цени"
         title="Ясно, без изненади"
-        intro={<p>Срещите се провеждат в кабинета или онлайн. Цената е една и съща, без допълнителни такси.</p>}
+        intro={<p>Срещите се провеждат присъствено в {site.contact.city} или онлайн. Цената е една и съща, без допълнителни такси.</p>}
       >
         <div className="grid gap-5 md:grid-cols-3">
           {site.services.map((s, i) => (
@@ -234,7 +233,7 @@ function ClosingCTA() {
           <h2 id="closing-title" className="mx-auto max-w-3xl text-[2.4rem] text-ink md:text-[3.6rem]">
             Първата стъпка може да бъде съвсем малка.
           </h2>
-          <p className="mx-auto mt-5 max-w-lg text-lg text-ink-2">Избери удобен час — онлайн или в кабинета.</p>
+          <p className="mx-auto mt-5 max-w-lg text-lg text-ink-2">Избери удобен час — присъствено или онлайн.</p>
           <div className="mt-9 flex justify-center">
             <BookingCTA size="lg" />
           </div>

@@ -35,10 +35,11 @@ export function ContactSection() {
             <li className="flex gap-4">
               <MapPin className="mt-1 h-5 w-5 shrink-0 text-moss" strokeWidth={1.5} aria-hidden="true" />
               <div>
-                <p className="text-sm text-ink-3">Кабинет</p>
+                <p className="text-sm text-ink-3">Присъствени срещи</p>
                 <address className="text-lg not-italic text-ink">
-                  {c.address}, {c.postalCode} {c.city}
+                  {c.address ? `${c.address}, ${c.postalCode} ${c.city}` : `гр. ${c.city}`}
                 </address>
+                {!c.address && <p className="mt-1 text-sm text-ink-3">{c.addressNote}</p>}
               </div>
             </li>
             <li className="flex gap-4">
