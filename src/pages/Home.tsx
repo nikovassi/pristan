@@ -10,6 +10,7 @@ import { PortraitArt } from '../components/PortraitArt'
 import { Reveal } from '../components/Reveal'
 import { Section } from '../components/Section'
 import { ServiceCard } from '../components/ServiceCard'
+import { ServiceOffer } from '../components/ServiceOffer'
 import { SpecialtyCard } from '../components/SpecialtyCard'
 import { Testimonial } from '../components/Testimonial'
 import { SITE_URL, site } from '../config/site'
@@ -143,21 +144,29 @@ export default function Home() {
       <Section
         id={sections.services}
         tone="soft"
-        eyebrow="Консултации и цени"
+        eyebrow="Консултация и цена"
         title="Ясно, без изненади"
-        intro={<p>Срещите се провеждат присъствено в {site.contact.city} или онлайн. Цената е една и съща, без допълнителни такси.</p>}
+        intro={<p>Една цена за всяка среща — присъствено в {site.contact.city} или онлайн. Без допълнителни такси.</p>}
       >
-        <div className="grid gap-5 md:grid-cols-3">
-          {site.services.map((s, i) => (
-            <Reveal key={s.id} delay={i * 80}>
-              <ServiceCard service={s} action={<BookingCTA className={`w-full ${s.featured ? '' : 'btn-quiet'}`} />} />
+        {site.services.length === 1 ? (
+          <Reveal>
+            <ServiceOffer service={site.services[0]} action={<BookingCTA className="w-full" size="lg" />} />
+          </Reveal>
+        ) : (
+          <>
+            <div className="grid gap-5 md:grid-cols-3">
+              {site.services.map((s, i) => (
+                <Reveal key={s.id} delay={i * 80}>
+                  <ServiceCard service={s} action={<BookingCTA className={`w-full ${s.featured ? '' : 'btn-quiet'}`} />} />
+                </Reveal>
+              ))}
+            </div>
+            <Reveal className="mt-10 flex flex-col gap-x-10 gap-y-3 text-[0.97rem] text-ink-2 md:flex-row" as="ul">
+              <li className="flex items-start gap-2.5"><Check className="mt-1 h-4 w-4 shrink-0 text-moss" strokeWidth={2} aria-hidden="true" />Плащане: {site.payment.methods.join(', ')}</li>
+              <li className="flex items-start gap-2.5"><Check className="mt-1 h-4 w-4 shrink-0 text-moss" strokeWidth={2} aria-hidden="true" />{site.payment.cancellation}</li>
             </Reveal>
-          ))}
-        </div>
-        <Reveal className="mt-10 flex flex-col gap-x-10 gap-y-3 text-[0.97rem] text-ink-2 md:flex-row" as="ul">
-          <li className="flex items-start gap-2.5"><Check className="mt-1 h-4 w-4 shrink-0 text-moss" strokeWidth={2} aria-hidden="true" />Плащане: {site.payment.methods.join(', ')}</li>
-          <li className="flex items-start gap-2.5"><Check className="mt-1 h-4 w-4 shrink-0 text-moss" strokeWidth={2} aria-hidden="true" />{site.payment.cancellation}</li>
-        </Reveal>
+          </>
+        )}
       </Section>
 
       {/* КАК ПРОТИЧА */}

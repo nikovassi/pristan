@@ -30,7 +30,7 @@ export function BookingEmbed({ service, onClose }: { service: Service; onClose: 
     >
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-5 py-4 md:px-7">
         <div>
-          <p className="text-sm text-ink-3">Стъпка 2 · Дата и час</p>
+          <p className="text-sm text-ink-3">Ден и час</p>
           <p className="font-serif text-2xl text-ink">{service.name}</p>
         </div>
         <div className="flex items-center gap-1">

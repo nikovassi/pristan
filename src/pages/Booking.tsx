@@ -6,13 +6,14 @@ import { BookingEmbed } from '../components/BookingEmbed'
 import { ExternalBookingButton } from '../components/BookingCTA'
 import { Reveal } from '../components/Reveal'
 import { ServiceCard } from '../components/ServiceCard'
+import { ServiceOffer } from '../components/ServiceOffer'
 import { BOOKING_PROVIDER, isBookingConfigured, site, type Service } from '../config/site'
 import { paths } from '../lib/paths'
 import { useSeo } from '../lib/seo'
 
 export const bookingSeo = {
   title: 'Запази час',
-  description: `Запази час за психологическа консултация онлайн или присъствено в ${site.contact.city}. Избери вид консултация, ден и час — получаваш потвърждение по имейл.`,
+  description: `Запази час за психологическа консултация онлайн или присъствено в ${site.contact.city}. Избери ден и час, присъствено или онлайн — получаваш потвърждение по имейл.`,
   path: paths.booking,
 }
 
@@ -21,6 +22,10 @@ export default function Booking() {
   const configured = isBookingConfigured()
   const c = site.contact
   const [selected, setSelected] = useState<Service | null>(null)
+  const single = site.services.length === 1
+  const steps = single
+    ? ['Ден и час', 'Присъствено или онлайн', 'Име, имейл, телефон', 'Потвърждение по имейл']
+    : ['Вид консултация', 'Дата и час', 'Твоите данни', 'Потвърждение по имейл']
 
   return (
     <div className="container-page pb-24 pt-12 md:pt-20">
@@ -31,12 +36,14 @@ export default function Booking() {
         </nav>
         <h1 className="text-[2.75rem] leading-[1.05] text-ink md:text-[4rem]">Запази час</h1>
         <p className="mt-5 text-lg leading-relaxed text-ink-2 md:text-xl">
-          Избери вид консултация. След това ще видиш свободните дни и часове и ще въведеш само име, имейл и телефон.
+          {single
+            ? 'Избери удобен ден и час, после дали искаш среща на живо или онлайн. Въвеждаш само име, имейл и телефон.'
+            : 'Избери вид консултация. След това ще видиш свободните дни и часове и ще въведеш само име, имейл и телефон.'}
         </p>
       </Reveal>
 
       <ol className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-3" aria-label="Стъпки при записване">
-        {['Вид консултация', 'Дата и час', 'Твоите данни', 'Потвърждение по имейл'].map((s, i) => (
+        {steps.map((s, i) => (
           <li key={s} className="flex items-center gap-2">
             <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-semibold ${i === 0 ? 'bg-accent text-accent-ink' : 'border border-line-strong text-ink-3'}`}>
               {i + 1}
@@ -46,31 +53,57 @@ export default function Booking() {
         ))}
       </ol>
 
+      {single ? (
+        <Reveal className="mt-10">
+          <h2 className="sr-only">Консултация</h2>
+          <ServiceOffer
+            service={site.services[0]}
+            action={
+              configured ? (
+                <button
+                  type="button"
+                  onClick={() => setSelected(site.services[0])}
+                  aria-expanded={!!selected}
+                  className="btn btn-primary min-h-[3.5rem] w-full px-8 text-base"
+                >
+                  {selected ? 'Календарът е отворен по-долу' : 'Покажи свободните часове'}
+                  <ArrowRight className="btn-arrow h-4 w-4" strokeWidth={1.8} aria-hidden="true" />
+                </button>
+              ) : (
+                <ExternalBookingButton service={site.services[0]} label="Избери час" className="w-full" />
+              )
+            }
+          />
+        </Reveal>
+      ) : (
+        <>
       <h2 className="sr-only">Видове консултации</h2>
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
-        {site.services.map((s, i) => (
-          <Reveal key={s.id} delay={i * 80}>
-            <ServiceCard
-              service={s}
-              action={
-                configured ? (
-                  <button
-                    type="button"
-                    onClick={() => setSelected(s)}
-                    aria-pressed={selected?.id === s.id}
-                    className={`btn w-full ${s.featured || selected?.id === s.id ? 'btn-primary' : 'btn-ghost'}`}
-                  >
-                    {selected?.id === s.id ? 'Избрано' : 'Избери час'}
-                    <ArrowRight className="btn-arrow h-4 w-4" strokeWidth={1.8} aria-hidden="true" />
-                  </button>
-                ) : (
-                  <ExternalBookingButton service={s} label="Избери час" variant={s.featured ? 'primary' : 'ghost'} className="w-full" />
-                )
-              }
-            />
-          </Reveal>
-        ))}
-      </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {site.services.map((s, i) => (
+            <Reveal key={s.id} delay={i * 80}>
+              <ServiceCard
+                service={s}
+                action={
+                  configured ? (
+                    <button
+                      type="button"
+                      onClick={() => setSelected(s)}
+                      aria-pressed={selected?.id === s.id}
+                      className={`btn w-full ${s.featured || selected?.id === s.id ? 'btn-primary' : 'btn-ghost'}`}
+                    >
+                      {selected?.id === s.id ? 'Избрано' : 'Избери час'}
+                      <ArrowRight className="btn-arrow h-4 w-4" strokeWidth={1.8} aria-hidden="true" />
+                    </button>
+                  ) : (
+                    <ExternalBookingButton service={s} label="Избери час" variant={s.featured ? 'primary' : 'ghost'} className="w-full" />
+                  )
+                }
+              />
+            </Reveal>
+          ))}
+        </div>
+        </>
+      )}
 
       {configured && selected && <BookingEmbed service={selected} onClose={() => setSelected(null)} />}
 
