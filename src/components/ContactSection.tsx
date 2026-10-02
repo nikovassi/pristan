@@ -2,7 +2,6 @@ import { Clock, Mail, MapPin, Phone, Video } from 'lucide-react'
 import { site } from '../config/site'
 import { sections } from '../lib/paths'
 import { BookingCTA } from './BookingCTA'
-import { MapEmbed } from './MapEmbed'
 import { Reveal } from './Reveal'
 import { Section } from './Section'
 
@@ -15,8 +14,8 @@ export function ContactSection() {
       title="Свържи се с мен"
       intro={<p>Ако имаш въпрос преди да запазиш час, пиши или се обади. {c.responseNote}</p>}
     >
-      <div className="grid gap-6 lg:grid-cols-2">
-        <Reveal className="card flex flex-col p-7 md:p-9">
+      <Reveal className="card p-7 md:p-10">
+        <div className="grid gap-x-16 gap-y-6 lg:grid-cols-2">
           <ul className="space-y-6">
             <li className="flex gap-4">
               <Phone className="mt-1 h-5 w-5 shrink-0 text-moss" strokeWidth={1.5} aria-hidden="true" />
@@ -49,6 +48,8 @@ export function ContactSection() {
                 <p className="text-lg text-ink">Консултации чрез защитена видеовръзка</p>
               </div>
             </li>
+          </ul>
+          <ul className="space-y-6">
             <li className="flex gap-4">
               <Clock className="mt-1 h-5 w-5 shrink-0 text-moss" strokeWidth={1.5} aria-hidden="true" />
               <div className="w-full">
@@ -63,18 +64,15 @@ export function ContactSection() {
                 </dl>
               </div>
             </li>
+            <li className="border-t border-line pt-7">
+              <BookingCTA className="w-full sm:w-auto" />
+              <p className="mt-4 text-sm leading-relaxed text-ink-3">
+                Моля, не изпращай по имейл подробна информация за здравословното си състояние. Ще говорим за това на срещата.
+              </p>
+            </li>
           </ul>
-          <div className="mt-9 border-t border-line pt-7">
-            <BookingCTA className="w-full sm:w-auto" />
-            <p className="mt-4 text-sm leading-relaxed text-ink-3">
-              Моля, не изпращай по имейл подробна информация за здравословното си състояние. Ще говорим за това на срещата.
-            </p>
-          </div>
-        </Reveal>
-        <Reveal delay={120}>
-          <MapEmbed />
-        </Reveal>
-      </div>
+        </div>
+      </Reveal>
     </Section>
   )
 }

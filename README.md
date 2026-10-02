@@ -19,7 +19,6 @@ React + TypeScript + Vite + Tailwind CSS, публикуван автомати�
 | **Снимка** | `site.psychologist.photo` — сложете файла в `public/images/` и задайте `'/images/portrait.jpg'` (препоръчително 800×1000 px, JPG/WebP) |
 | **Телефон, имейл, адрес** | `site.contact` (`phone` е за показване, `phoneHref` — без интервали) |
 | **Работно време** | `site.contact.hours` |
-| Google Maps | `site.contact.mapsUrl` (линк) и `mapsEmbedUrl` (вградена карта) |
 | **Цени и видове консултации** | `site.services` — `price`, `duration`, `description`; `site.currency` |
 | Директен линк към конкретна услуга | `site.services[i].bookingUrl` (по избор) |
 | Начини на плащане, отмяна | `site.payment` |
@@ -43,7 +42,7 @@ React + TypeScript + Vite + Tailwind CSS, публикуван автомати�
 {
   slug: 'moyata-nova-statiya',          // адрес: /polezno/moyata-nova-statiya
   title: 'Заглавие',
-  description: 'Едно-две изречения за търсачките и картата.',
+  description: 'Едно-две изречения за търсачките и картата на статията.',
   date: '2026-10-15',
   minutes: 4,
   body: `
@@ -89,7 +88,6 @@ React + TypeScript + Vite + Tailwind CSS, публикуван автомати�
 
 - Няма контактни форми, няма Google Analytics, Facebook Pixel или други trackers.
 - Шрифтовете се хостват локално (без Google Fonts).
-- Google Maps се зарежда **само след клик** („Покажи картата“).
 - Календарът на Cal.com се зарежда само след избор на консултация (без чужди скриптове преди това).
 - `localStorage` пази само избраната тема.
 - Ако включите `site.analytics`, се показва банер за съгласие и скриптът се зарежда едва след „Разреши“.

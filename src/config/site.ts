@@ -81,10 +81,6 @@ export const site = {
     city: 'Стара Загора',
     postalCode: '',
     addressNote: 'Точният адрес получаваш в имейла за потвърждение на часа.',
-    /** Линк, който отваря адреса в Google Maps (нов прозорец). */
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=%D0%A1%D1%82%D0%B0%D1%80%D0%B0+%D0%97%D0%B0%D0%B3%D0%BE%D1%80%D0%B0',
-    /** Embed URL за картата. Зарежда се само след съгласие от посетителя. */
-    mapsEmbedUrl: 'https://www.google.com/maps?q=%D0%A1%D1%82%D0%B0%D1%80%D0%B0+%D0%97%D0%B0%D0%B3%D0%BE%D1%80%D0%B0&output=embed',
     hours: [
       { days: 'Понеделник – Петък', time: '10:00 – 19:00' },
       { days: 'Събота', time: 'по договаряне' },
