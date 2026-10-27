@@ -145,8 +145,8 @@ export default function Home() {
         id={sections.services}
         tone="soft"
         eyebrow="Консултация и цена"
-        title="Ясно, без изненади"
-        intro={<p>Една цена за всяка среща — присъствено в {site.contact.city} или онлайн. Без допълнителни такси.</p>}
+        title="Цена и формат"
+        intro={<p>Срещите са присъствено в {site.contact.city} или онлайн, на една и съща цена.</p>}
       >
         {site.services.length === 1 ? (
           <Reveal>
